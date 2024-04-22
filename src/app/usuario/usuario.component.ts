@@ -5,18 +5,24 @@ import { Observable } from 'rxjs';
 import { Usuario, UsuarioResponse } from './usuario.interface';
 import { UsuarioService } from '../services/usuario.service';
 import { RouterModule } from '@angular/router';
+import UsuarioFormComponent from '../usuario-form/usuario-form.component';
 
 @Component({
   selector: 'app-usuario',
   standalone: true,
-  imports: [AsyncPipe, UsuarioComponent, RouterModule, ],
+  imports: [AsyncPipe, UsuarioComponent, RouterModule, UsuarioFormComponent],
   templateUrl: './usuario.component.html',
   styleUrl: './usuario.component.css'
 })
 export default class UsuarioComponent implements OnInit {
   public usuarioList$!: Observable<UsuarioResponse>;
-  constructor( private usuarioService: UsuarioService){
+  constructor( private usuarioService: UsuarioService,
+    private usuarioFormComponent: UsuarioFormComponent
+  ){
     
+  }
+  openModal() {
+    this.usuarioFormComponent.openModal();
   }
 
   ngOnInit(): void {
@@ -32,4 +38,5 @@ export default class UsuarioComponent implements OnInit {
       this.loadAll();
     })
   }
+  
 }

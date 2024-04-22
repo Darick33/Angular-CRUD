@@ -1,4 +1,4 @@
-import { Component, OnInit, inject } from '@angular/core';
+import { Component, OnInit, inject, ViewChild, ElementRef  } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { UsuarioService } from '../services/usuario.service';
@@ -66,5 +66,17 @@ export default class UsuarioFormComponent  implements OnInit{
 
     }
   }
+
+  @ViewChild('myModal') myModal: ElementRef | any;
+  constructor() { }
+
+  openModal() {
+    this.myModal.nativeElement.style.display = 'block';
+  }
+  closeModal() {
+    this.myModal.nativeElement.style.display = 'none';
+  }
  
 }
+
+
