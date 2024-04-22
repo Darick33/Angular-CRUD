@@ -1,0 +1,110 @@
+@if (form) {
+    <h2>
+        @if (usuario) {
+            EDITAR
+        }@else {
+            NUEVO
+        } USUARIO 
+    </h2>
+    <form [formGroup]="form" (ngSubmit)="save()">
+        <input type="hidden" name="id" id="id" formControlName="id" > 
+        <div class="row container">
+            <div class="col-xl-6">
+                <div class="mb-3 row">
+                    <label class="col-lg-4 col-form-label " for="validationCustom01">Nombre
+                        <span class="text-danger">*</span>
+                    </label>
+                    <div class="col-lg-6">
+                        <input id="nombre" type="text" class="form-control"  placeholder="Ingrese el nombre del socio."
+                            required=""  formControlName="nombre">
+                        <div class="invalid-feedback">
+                            Ingrese el nombre del socio.
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label class="col-lg-4 col-form-label" for="validationCustom06">Apellido
+                        <span class="text-danger">*</span>
+                    </label>
+                    <div class="col-lg-6">
+    
+                        <input type="text" class="form-control" placeholder="2017-06-04" id="apellido" formControlName="apellido">
+                        <div class="invalid-feedback" >
+                            Please enter a Currency.
+                        </div>
+                    </div>
+    
+    
+    
+                </div>
+    
+    
+    
+            </div>
+            <div class="col-xl-6">
+    
+    
+                <div class="mb-3 row">
+                    <label class="col-lg-4 col-form-label" for="validationCustom02">ROL <span
+                            class="text-danger">*</span>
+                    </label>
+                    <div class="col-lg-6">
+                        <select class="form-control default-select wide" id="rol" formControlName="rol">
+                            <option selected disabled>Choose...</option>
+                            <option>ADMINISTRADOR</option>
+                            <option>ENTRENADOR</option>
+                            <option>RECEPCION</option>
+    
+                        </select>
+                        <div id="rol-error" class="text-danger"></div>
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label class="col-lg-4 col-form-label" for="validationCustom06">Email
+                        <span class="text-danger">*</span>
+                    </label>
+                    <div class="col-lg-6">
+    
+                        <input type="email" class="form-control" placeholder="tucorreo@tucorreo" id="email" formControlName="email">
+                        <div class="invalid-feedback">
+                            Please enter a Currency.
+                        </div>
+                    </div>
+    
+    
+    
+                </div>
+                @if (usuario) {
+                    
+                }@else {
+                    
+                    <div class="mb-3 row">
+                        <label class="col-lg-4 col-form-label" for="validationCustom06">Contrasenia
+                            <span class="text-danger">*</span>
+                        </label>
+                        <div class="col-lg-6">
+                            
+                            <input type="password" class="form-control" placeholder="********" id="clave" formControlName="clave">
+                            <div class="invalid-feedback">
+                                Please enter a Currency.
+                            </div>
+                        </div>
+                        
+                        
+                        
+                    </div>
+                } 
+    
+    
+    
+    
+                <div class="mb-3 row">
+                    <div class="col-lg-8 ms-auto ">
+                        <button  class="btn btn-primary">Enviar</button>
+                        <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+}
