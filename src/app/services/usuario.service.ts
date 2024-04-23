@@ -31,7 +31,7 @@ export class UsuarioService {
     this.jwtToken = token;
   }
   private getHeaders(): HttpHeaders {
-    this.jwtToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhcHBneW0iLCJzdWIiOiJzZWJvbGluMjAwNEBnbWFpbC5jb20iLCJpZCI6IjkzZDZhZWE3LWFmYmYtNDNmZC1iMGU2LTQyNWY5NjM4OTY0MSIsInJvbCI6IkFETUlOSVNUUkFET1IiLCJleHAiOjE3MTM3NTc0MTZ9.YLKmqsjO8wLm5txN0OybBDX44Mx2tiUo3llXoTZ7R5M";
+    this.jwtToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhcHBneW0iLCJzdWIiOiJzZWJvbGluMjAwNEBnbWFpbC5jb20iLCJpZCI6IjkzZDZhZWE3LWFmYmYtNDNmZC1iMGU2LTQyNWY5NjM4OTY0MSIsInJvbCI6IkFETUlOSVNUUkFET1IiLCJleHAiOjE3MTQ2OTI2OTV9.D15ycJv-vNoWYnE7tFo9QQaJNZOSfLm98PgbPGToCNg";
     let headers = new HttpHeaders();
     if (this.jwtToken) {
       headers = headers.set('Authorization', `Bearer ${this.jwtToken}`);

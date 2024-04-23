@@ -56,12 +56,12 @@ export default class UsuarioFormComponent  implements OnInit{
     if(this.usuario){
       this.usuarioService.update(this.usuario.id, caloresUsuario)
       .subscribe(()=>{
-        // this.router.navigate(['/']);
+        this.router.navigate(['/']);
       })
     }else{
       this.usuarioService.create(caloresUsuario)
       .subscribe(()=>{
-        // this.router.navigate(['/']);
+        this.router.navigate(['/']);
       })
 
     }

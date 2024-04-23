@@ -17,12 +17,12 @@ import UsuarioFormComponent from '../usuario-form/usuario-form.component';
 export default class UsuarioComponent implements OnInit {
   public usuarioList$!: Observable<UsuarioResponse>;
   constructor( private usuarioService: UsuarioService,
-    private usuarioFormComponent: UsuarioFormComponent
+    // private usuarioFormComponent: UsuarioFormComponent
   ){
     
   }
   openModal() {
-    this.usuarioFormComponent.openModal();
+    // this.usuarioFormComponent.openModal();
   }
 
   ngOnInit(): void {
